@@ -338,7 +338,7 @@ class SubmissionMixin(object):
         Returns:
             unicode
         """
-       return self._(u'This response has been saved but not submitted.') if self.has_saved else self._(u'This response has not been saved.')
+        return self._(u'This response has been saved but not submitted.') if self.has_saved else self._(u'This response has not been saved.')
 
 
     @XBlock.handler
