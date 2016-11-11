@@ -47,7 +47,7 @@ describe("OpenAssessment.StudioView", function() {
         feedbackPrompt: "",
         submissionStart: "2014-01-02T12:15",
         submissionDue: "2014-10-01T04:53",
-        imageSubmissionEnabled: false,
+        fileUploadType: "",
         leaderboardNum: 12,
         criteria: [
             {
@@ -132,7 +132,7 @@ describe("OpenAssessment.StudioView", function() {
 
         // Create the object under test
         var el = $('#openassessment-editor').get(0);
-        view = new OpenAssessment.StudioView(runtime, el, server);
+        view = new OpenAssessment.StudioView(runtime, el, server, data);
     });
 
     it("sends the editor context to the server", function() {
@@ -149,7 +149,7 @@ describe("OpenAssessment.StudioView", function() {
         expect(server.receivedData.feedbackPrompt).toEqual(EXPECTED_SERVER_DATA.feedbackPrompt);
         expect(server.receivedData.submissionStart).toEqual(EXPECTED_SERVER_DATA.submissionStart);
         expect(server.receivedData.submissionDue).toEqual(EXPECTED_SERVER_DATA.submissionDue);
-        expect(server.receivedData.imageSubmissionEnabled).toEqual(EXPECTED_SERVER_DATA.imageSubmissionEnabled);
+        expect(server.receivedData.fileUploadType).toEqual(EXPECTED_SERVER_DATA.fileUploadType);
         expect(server.receivedData.leaderboardNum).toEqual(EXPECTED_SERVER_DATA.leaderboardNum);
 
         // Criteria

@@ -23,8 +23,8 @@ class StudioViewTest(XBlockHandlerTestCase):
         "feedback_default_text": "Test feedback default text",
         "submission_start": "4014-02-10T09:46",
         "submission_due": "4014-02-27T09:46",
-        "allow_file_upload": False,
-        "allow_latex": False,
+        "file_upload_type": None,
+        "white_listed_file_types": '',
         "leaderboard_show": 4,
         "assessments": [{"name": "self-assessment"}],
         "editor_assessments_order": [
@@ -150,7 +150,6 @@ class StudioViewTest(XBlockHandlerTestCase):
         resp = self.request(xblock, 'update_editor_context', json.dumps(data), response_format='json')
         self.assertTrue(resp['success'], msg=resp.get('msg'))
         self.assertEqual(xblock.editor_assessments_order, data['editor_assessments_order'])
-
 
     @scenario('data/basic_scenario.xml')
     def test_update_editor_context_saves_assessment_order_with_ai(self, xblock):

@@ -52,6 +52,7 @@ class OpenAssessmentTest(WebAppTest):
         'self_only': u'courses/ora2/1/1/courseware/a4dfec19cf9b4a6fb5b18be6ccd9cecc/338a4affb58a45459629e0566291381e/',
         'peer_only': u'courses/ora2/1/1/courseware/a4dfec19cf9b4a6fb5b18be6ccd9cecc/417e47b2663a4f79b62dba20b21628c8/',
         'student_training': u'courses/ora2/1/1/courseware/676026889c884ac1827688750871c825/5663e9b038434636977a4226d668fe02/',
+        'file_upload':u'courses/ora2/1/1/courseware/57a3f9d51d424f6cb922f0d69cba868d/bb563abc989340d8806920902f267ca3/',
     }
 
     SUBMISSION = u"This is a test submission."
@@ -180,6 +181,44 @@ class StudentTrainingTest(OpenAssessmentTest):
             self.student_training_page.wait_for_complete()
         except BrokenPromise:
             self.fail("Student training was not marked complete.")
+
+
+class FileUploadTest(OpenAssessmentTest):
+    """
+    Test file upload
+    """
+
+    def setUp(self):
+        super(FileUploadTest, self).setUp('file_upload')
+
+    @retry()
+    @attr('acceptance')
+    def test_file_upload(self):
+        self.auto_auth_page.visit()
+        # trying to upload a unacceptable file
+        self.submission_page.visit()
+        # hide django debug tool, otherwise, it will cover the button on the right side,
+        # which will cause the button non-clickable and tests to fail
+        self.submission_page.hide_django_debug_tool()
+        self.submission_page.select_file(os.path.dirname(os.path.realpath(__file__)) + '/__init__.py')
+        self.assertTrue(self.submission_page.has_file_error)
+
+        # trying to upload a acceptable file
+        self.submission_page.visit().select_file(os.path.dirname(os.path.realpath(__file__)) + '/README.rst')
+        self.assertFalse(self.submission_page.has_file_error)
+        self.submission_page.upload_file()
+        self.assertTrue(self.submission_page.has_file_uploaded)
+
+
+if __name__ == "__main__":
+
+    # Configure the screenshot directory
+    if 'SCREENSHOT_DIR' not in os.environ:
+        tests_dir = os.path.dirname(__file__)
+        os.environ['SCREENSHOT_DIR'] = os.path.join(tests_dir, 'screenshots')
+
+    unittest.main()
+
 
 
 if __name__ == "__main__":

@@ -52,6 +52,11 @@ class OpenAssessmentPage(PageObject):
             self.q(css=".action--submit").first.click()
 
 
+
+    def hide_django_debug_tool(self):
+        if self.q(css='#djDebug').visible:
+            self.q(css='#djHideToolBarButton').click()
+
 class SubmissionPage(OpenAssessmentPage):
     """
     Page object representing the "submission" step in an ORA problem.
@@ -75,6 +80,23 @@ class SubmissionPage(OpenAssessmentPage):
         self.submit()
         EmptyPromise(lambda: self.has_submitted, 'Response is completed').fulfill()
 
+    def select_file(self, file_path_name):
+        """
+        Select a file from local file system for uploading
+    
+        Args:
+          file_path_name (string): full path and name of the file
+        """
+        self.wait_for_element_visibility("#submission__answer__upload", "File select button is present")
+        self.q(css="#submission__answer__upload").fill(file_path_name)
+
+    def upload_file(self):
+        """
+        Upload the selected file
+        """
+        self.wait_for_element_visibility("#file__upload", "Upload button is present")
+        self.q(css="#file__upload").click()    
+    
     @property
     def has_submitted(self):
         """
@@ -84,6 +106,25 @@ class SubmissionPage(OpenAssessmentPage):
             bool
         """
         return self.q(css=".step--response.is--complete").is_present()
+
+    @property
+    def has_file_error(self):
+        """
+        Check whether there is an error message for file upload.
+        
+        Returns:
+            bool
+        """
+        return self.q(css="#upload__error > div").visible
+
+    @property
+    def has_file_uploaded(self):
+        """
+        Check whether file is successfully uploaded
+        Returns:
+            bool
+        """
+        return self.q(css="#submission__custom__upload").visible
 
 
 class AssessmentPage(OpenAssessmentPage):
