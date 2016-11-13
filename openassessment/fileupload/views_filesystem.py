@@ -157,7 +157,7 @@ def get_root_directory_path():
     Raises:
         FileUploadInternalError if the root directory setting does not exist.
     """
-    root_dir = getattr(settings, "ORA2_FILEUPLOAD_ROOT", None)
+    root_dir = getattr(settings, "ORA2_FILEUPLOAD_ROOT", "/edx/var/ora2/upload")
     if not root_dir:
         raise exceptions.FileUploadInternalError("Undefined file upload root directory setting")
     return root_dir

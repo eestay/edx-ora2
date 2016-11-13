@@ -57,7 +57,7 @@ def get_cache():
         InvalidCacheBackendError if the corresponding cache backend has not
         been configured.
     """
-    cache_name = getattr(settings, "ORA2_FILEUPLOAD_CACHE_NAME", None)
+    cache_name = getattr(settings, "ORA2_FILEUPLOAD_CACHE_NAME", "default")
     if cache_name is None:
         raise exceptions.FileUploadInternalError("Undefined cache backend for file upload")
     return django.core.cache.get_cache(cache_name)
