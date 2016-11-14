@@ -23,7 +23,7 @@ class Settings(object):
 
     @classmethod
     def get_bucket_name(cls):
-        bucket_name = getattr(settings, "FILE_UPLOAD_STORAGE_BUCKET_NAME", None)
+        bucket_name = getattr(settings, "FILE_UPLOAD_STORAGE_BUCKET_NAME", "ora2-storage")
         if not bucket_name:
             raise FileUploadInternalError("No bucket name configured for FileUpload Service.")
         return bucket_name
