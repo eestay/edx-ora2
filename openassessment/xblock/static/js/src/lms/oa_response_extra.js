@@ -54,11 +54,6 @@ setTimeout('temp_css()', 5000);
 setInterval('timer_button()',3000);
 
 
-$(".submission--image").click(function(){
- var href = $('.submission--image').attr('href');
- var href = href.substring(0,href.length - 1);
- var pdfext = '.pdf';
- var href = href + pdfext;
- console.log(href);
-});
+
+
 
