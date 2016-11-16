@@ -53,7 +53,7 @@ setTimeout('temp_tmce()', 5000);
 setTimeout('temp_tmce_or()', 5000);
 setTimeout('temp_css()', 5000);
 setInterval('timer_button()',3000);
-
+setInterval('temp_tmce_or()',2000);
 
 
 

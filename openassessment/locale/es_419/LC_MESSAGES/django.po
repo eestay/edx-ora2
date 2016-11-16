@@ -320,8 +320,8 @@ msgstr "Debe especificar el tipo de contenido."
 
 #: build/lib.linux-x86_64-2.7/openassessment/xblock/submission_mixin.py:194
 #: openassessment/xblock/submission_mixin.py:211
-msgid "contentType must be an image."
-msgstr "El tipo de contenido debe ser una imagen."
+msgid "contentType must be an pdf file."
+msgstr "El tipo de contenido debe ser un archivo pdf."
 
 #: build/lib.linux-x86_64-2.7/openassessment/xblock/submission_mixin.py:202
 #: openassessment/xblock/submission_mixin.py:219
@@ -961,7 +961,7 @@ msgstr "Paso 1 (Tu texto)"
 #: openassessment/templates/openassessmentblock/response/oa_response_graded.html:30
 #: openassessment/templates/openassessmentblock/response/oa_response_submitted.html:48
 msgid "Your Image"
-msgstr "Su Imagen"
+msgstr "Su Archivo"
 
 #: openassessment/templates/openassessmentblock/grade/oa_grade_complete.html:41
 #: openassessment/templates/openassessmentblock/response/oa_response.html:92
@@ -1413,7 +1413,7 @@ msgstr "\n                                            Revisión # %(review_numbe
 #: openassessment/templates/openassessmentblock/peer/oa_peer_turbo_mode.html:58
 #: openassessment/templates/openassessmentblock/self/oa_self_assessment.html:51
 msgid "Associated Image"
-msgstr "Imagen asociada"
+msgstr "Archivo asociado"
 
 #: openassessment/templates/openassessmentblock/peer/oa_peer_assessment.html:94
 #: openassessment/templates/openassessmentblock/peer/oa_peer_turbo_mode.html:148
@@ -1576,7 +1576,7 @@ msgstr "Seleccione una imagen para cargar para esta presentación."
 
 #: openassessment/templates/openassessmentblock/response/oa_response.html:85
 msgid "Upload your image"
-msgstr "Cargue su imagen"
+msgstr "Cargue su archivo"
 
 #: openassessment/templates/openassessmentblock/response/oa_response.html:100
 msgid "You may continue to work on your response until you submit it."

@@ -18,7 +18,7 @@
                             {% endwith %}
                             <div class="leaderboard__answer">
                                 {% if topscore.file %}
-                                <a class="leaderboard__score__image" alt="{% trans "PDF asociado." %}" src="{{ topscore.file }}">Click para descargar</a>
+                                <a class="leaderboard__score__image" alt="{% trans "PDF asociado." %}" href="{{ topscore.file }}">Click para descargar</a>
                                 {% endif %}
                                 {% include "openassessmentblock/oa_submission_answer.html" with answer=topscore.submission.answer answer_text_label="Your peer's response to the question above:" %}
                             </div>
