@@ -969,7 +969,7 @@ msgstr "Su Archivo"
 #: openassessment/templates/openassessmentblock/response/oa_response_submitted.html:51
 #: openassessment/templates/openassessmentblock/self/oa_self_assessment.html:56
 msgid "The image associated with your submission."
-msgstr "La imagen asociada a su presentación"
+msgstr "El archivo pdf asociado a su presentación"
 
 #: openassessment/templates/openassessmentblock/grade/oa_grade_complete.html:47
 msgid "Assessments of Your Response"
@@ -1176,7 +1176,7 @@ msgstr "%(num_points)s puntos"
 #: openassessment/templates/openassessmentblock/peer/oa_peer_assessment.html:79
 #: openassessment/templates/openassessmentblock/peer/oa_peer_turbo_mode.html:63
 msgid "The image associated with your peer's submission."
-msgstr "La imagen asociada con su presentación de pares."
+msgstr "El archivo pdf asociado con su presentación de pares."
 
 #: openassessment/templates/openassessmentblock/leaderboard/oa_leaderboard_waiting.html:15
 msgid ""
@@ -1568,11 +1568,11 @@ msgstr "Tu texto"
 
 #: openassessment/templates/openassessmentblock/response/oa_response.html:79
 msgid "We could not upload this image"
-msgstr "No pudimos cargar la imagen."
+msgstr "Su archivo no pudo ser subido"
 
 #: openassessment/templates/openassessmentblock/response/oa_response.html:83
 msgid "Select an image to upload for this submission."
-msgstr "Seleccione una imagen para cargar para esta presentación."
+msgstr "Seleccione un archivo pdf para cargar para esta presentación."
 
 #: openassessment/templates/openassessmentblock/response/oa_response.html:85
 msgid "Upload your image"
@@ -1816,7 +1816,7 @@ msgstr ""
 
 #: openassessment/templates/openassessmentblock/staff_debug/student_info.html:31
 msgid "The image associated with this response"
-msgstr "La imagen asociada con esta respuesta"
+msgstr "El archivo pdf asociado con esta respuesta"
 
 #: openassessment/templates/openassessmentblock/staff_debug/student_info.html:44
 msgid "Remove submission from peer grading"
