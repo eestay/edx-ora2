@@ -1556,7 +1556,7 @@ msgstr "Puedes guardar tu progreso y regresar a completarlo en cualquier momento
 
 #: openassessment/templates/openassessmentblock/response/oa_response.html:48
 msgid "After you submit your response, you cannot edit it"
-msgstr "Una vez que envíes tu texto, no podrás continuar editándo."
+msgstr "Una vez que envíes tu texto, no podrás continuar editando"
 
 #: openassessment/templates/openassessmentblock/response/oa_response.html:58
 msgid "The prompt for this section."
@@ -1568,7 +1568,7 @@ msgstr "Tu texto"
 
 #: openassessment/templates/openassessmentblock/response/oa_response.html:79
 msgid "We could not upload this image"
-msgstr "Su archivo no pudo ser subido"
+msgstr "Su archivo no pudo ser subido."
 
 #: openassessment/templates/openassessmentblock/response/oa_response.html:83
 msgid "Select an image to upload for this submission."
