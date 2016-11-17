@@ -137,12 +137,12 @@ msgstr "Está a punto de subir su respuesta para esta tarea. Después de subirla
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
 #: openassessment/xblock/static/js/src/lms/oa_response.js:478
 msgid "File size must be 5MB or less."
-msgstr "El tamaño del archivo debe ser de 5 MB o menos."
+msgstr "Su archivo no pudo ser subido. El tamaño del archivo PDF debe ser de 5 MB o menos."
 
 #: openassessment/xblock/static/js/openassessment-lms.min.js:1
 #: openassessment/xblock/static/js/src/lms/oa_response.js:482
 msgid "File must be an image."
-msgstr "El archivo debe ser una imagen."
+msgstr "Su archivo no pudo ser subido. Debe tener formato PDF."
 
 #: openassessment/xblock/static/js/openassessment-studio.min.js:1
 #: openassessment/xblock/static/js/src/studio/oa_container_item.js:39

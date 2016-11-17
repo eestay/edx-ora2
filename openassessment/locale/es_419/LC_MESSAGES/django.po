@@ -914,7 +914,7 @@ msgstr "No seleccionado"
 #: openassessment/templates/openassessmentblock/grade/oa_grade_not_started.html:7
 #: openassessment/templates/openassessmentblock/grade/oa_grade_waiting.html:7
 msgid "Your Grade"
-msgstr "Su Nota"
+msgstr "Su nota"
 
 #: openassessment/templates/openassessmentblock/grade/oa_grade_cancelled.html:12
 #, python-format
@@ -938,7 +938,7 @@ msgstr "Incompleto"
 #: openassessment/templates/openassessmentblock/grade/oa_grade_closed.html:10
 #: openassessment/templates/openassessmentblock/grade/oa_grade_incomplete.html:19
 msgid "You have not completed all the steps of this problem."
-msgstr "Ud. no ha completado todos los pasos en este problema."
+msgstr "Ud. no ha completado todos los pasos en esta tarea."
 
 #: openassessment/templates/openassessmentblock/grade/oa_grade_complete.html:12
 #, python-format
@@ -1556,7 +1556,7 @@ msgstr "Puedes guardar tu progreso y regresar a completarlo en cualquier momento
 
 #: openassessment/templates/openassessmentblock/response/oa_response.html:48
 msgid "After you submit your response, you cannot edit it"
-msgstr "Una vez que envíes tu texto, no podrás continuar editándolo."
+msgstr "Una vez que envíes tu texto, no podrás continuar editándo."
 
 #: openassessment/templates/openassessmentblock/response/oa_response.html:58
 msgid "The prompt for this section."
