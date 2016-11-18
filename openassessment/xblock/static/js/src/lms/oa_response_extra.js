@@ -4,6 +4,7 @@ function temp_tmce() {
     height: 500,
     plugins: ['advlist autolink lists link anchor'],
     menubar: false,
+    language_url : '/tiny_es.js',
     content_css: '//www.tinymce.com/css/codepen.min.css',        
     init_instance_callback: function (editor) {
         var saved_text = tinymce.DOM.getOuterHTML(submission__answer__part__text__1);
