@@ -1,6 +1,7 @@
 function temp_tmce() {
     tinymce.init({
-    selector: '.submission__answer__part__text__value2', 
+    selector: '.submission__answer__part__text__value2',
+    auto_focus: 'text-layer',
     height: 500,
     plugins: ['advlist autolink lists link anchor'],
     menubar: false,
@@ -10,6 +11,11 @@ function temp_tmce() {
         var saved_text = tinymce.DOM.getOuterHTML(submission__answer__part__text__1);
         tinymce.activeEditor.setContent( saved_text , {format: 'raw'});
         tinymce.activeEditor.dom.remove('submission__answer__part__text__1', true);
+        editor.on('focus', function (e) { 
+            var real_text = tinymce.activeEditor.getContent({format: 'raw'}); 
+                tinymce.DOM.setHTML('submission__answer__part__text__1', real_text);
+                console.log('focus:', e.target.nodeName);
+                });  
         editor.on('change', function (e) { 
             var real_text = tinymce.activeEditor.getContent({format: 'raw'}); 
                             tinymce.DOM.setHTML('submission__answer__part__text__1', real_text);
