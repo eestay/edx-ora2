@@ -11,10 +11,7 @@ function temp_tmce() {
         var saved_text = tinymce.DOM.getOuterHTML(submission__answer__part__text__1);
         tinymce.activeEditor.setContent( saved_text , {format: 'raw'});
         tinymce.activeEditor.dom.remove('submission__answer__part__text__1', true);
-        editor.on('init', function (e) {
-            var real_text = tinymce.activeEditor.getContent({format: 'raw'});
-                tinymce.DOM.setHTML('submission__answer__part__text__1', real_text);
-                });
+        tinymce.activeEditor.dom.fire('click', console.log('Editor MCE activo'));
         editor.on('focus', function (e) {
             var real_text = tinymce.activeEditor.getContent({format: 'raw'});
                 tinymce.DOM.setHTML('submission__answer__part__text__1', real_text);
