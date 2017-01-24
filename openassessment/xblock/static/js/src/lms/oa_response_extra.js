@@ -32,15 +32,7 @@ function temp_tmce() {
             var real_text = tinymce.activeEditor.getContent({format: 'raw'});
                             tinymce.DOM.setHTML('submission__answer__part__text__1', real_text);
                             });
-        tinymce.DOM.bind(submission__save, 'click', function(e) {
-            var real_text = tinymce.activeEditor.getContent({format: 'raw'});
-                            tinymce.DOM.setHTML('submission__answer__part__text__1', real_text);
-                            });
-        tinymce.DOM.bind(a, 'click', function(e) {
-            var real_text = tinymce.activeEditor.getContent({format: 'raw'});
-                            tinymce.DOM.setHTML('submission__answer__part__text__1', real_text);
-                            });
-        tinymce.DOM.bind(file__upload, 'click', function(e) {
+        tinymce.DOM.bind(document, 'click', function(e) {
             var real_text = tinymce.activeEditor.getContent({format: 'raw'});
                             tinymce.DOM.setHTML('submission__answer__part__text__1', real_text);
                             });
