@@ -32,6 +32,18 @@ function temp_tmce() {
             var real_text = tinymce.activeEditor.getContent({format: 'raw'});
                             tinymce.DOM.setHTML('submission__answer__part__text__1', real_text);
                             });
+        tinymce.DOM.bind(submission__save, 'click', function(e) {
+            var real_text = tinymce.activeEditor.getContent({format: 'raw'});
+                            tinymce.DOM.setHTML('submission__answer__part__text__1', real_text);
+                            });
+        tinymce.DOM.bind(send__response_sb, 'click', function(e) {
+            var real_text = tinymce.activeEditor.getContent({format: 'raw'});
+                            tinymce.DOM.setHTML('submission__answer__part__text__1', real_text);
+                            });
+        tinymce.DOM.bind(file__upload, 'click', function(e) {
+            var real_text = tinymce.activeEditor.getContent({format: 'raw'});
+                            tinymce.DOM.setHTML('submission__answer__part__text__1', real_text);
+                            });
                         }
                     });
     }
