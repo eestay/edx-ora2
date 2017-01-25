@@ -56,6 +56,10 @@ function temp_tmce_or() {
 function temp_css() {
     $("#submission__answer__part__text__1_ifr").css({"visibility":"hidden","min-height":"1px","max-height":"1px"});
     $("#submission__answer__part__text__1").css({"visibility":"hidden","min-height":"1px","max-height":"1px"});
+    $('#submission__answer__image').click(function(){
+    window.open(this.href);
+    return false;
+  });
     }
 function timer_button() {
     $('#submission__save').removeClass('is--disabled');
