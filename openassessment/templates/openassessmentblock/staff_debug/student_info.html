@@ -26,11 +26,11 @@
                 </div>
 
                 {% if submission.image_url %}
-                <img
+		 <a
                     class="submission--image"
-                    alt="{% trans "The image associated with this response" %}"
-                    src="{{ submission.image_url }}"
-                />
+                    alt="{% trans "PDF asociado." %}"
+                    href="{{ submission.image_url }}"
+		    >Click para descargar</a>
                 {% endif %}
             </div>
         </div>

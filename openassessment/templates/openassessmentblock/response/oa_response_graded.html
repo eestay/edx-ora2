@@ -30,7 +30,7 @@
                 <h3 class="submission__answer__display__title">{% trans "Your Image" %}</h3>
 
                 <div class="submission__answer__display__image">
-                    <img class="submission--image" alt="{% trans "The image associated with your submission." %}" src="{{ file_url }}"/>
+			<a class="submission--image" alt="{% trans "PDF asociado."%}" href="{{ peer_file_url }}" >Click para descargar</a>
                 </div>
                 {% endif %}
             </article>
