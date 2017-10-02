@@ -86,12 +86,11 @@
                         </li>
                         <li>
                             <div class="submission__answer__display__image is--hidden">
-                                <img id="submission__answer__image"
-                                     class="submission--image"
+			         <a id="submission__answer__image"
                                      {% if file_url %}
-				     alt="{% trans "PDF asociado." %}"
+                                     alt="{% trans "PDF asociado." %}"
                                      {% endif %}
-				      href="{{ file_url }}">Click para descargar</a>
+				     href="{{ file_url }}">Click para descargar</a>
                             </div>
                         </li>
                         {% endif %}
