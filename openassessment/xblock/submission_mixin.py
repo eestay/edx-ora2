@@ -175,6 +175,7 @@ class SubmissionMixin(object):
         if self.allow_file_upload:
             upload_dir = self._get_student_item_key().split('/',2)
             logging.info('\n\n\n dir\n')
+            logging.info("/edx/var/ora2/upload/edxuploads"+upload_dir[0]+'/'+upload_dir[1])
             if(os.path.isdir("/edx/var/ora2/upload/edxuploads"+upload_dir[0]+'/'+upload_dir[1])):
                 logging.info('exits dir ')
                 student_sub_dict['file_key'] = self._get_student_item_key()
