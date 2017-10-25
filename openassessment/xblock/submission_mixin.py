@@ -173,7 +173,16 @@ class SubmissionMixin(object):
         student_sub_dict = prepare_submission_for_serialization(student_sub_data)
 
         if self.allow_file_upload:
-            student_sub_dict['file_key'] = self._get_student_item_key()
+            upload_dir = self._get_student_item_key().split('/',2)
+            logging.info('\n\n\n dir\n')
+            if(os.path.isdir("/edx/var/ora2/upload/edxuploads"+upload_dir[0]+'/'+upload_dir[1])):
+                logging.info('exits dir ')
+                student_sub_dict['file_key'] = self._get_student_item_key()
+            else:
+                logging.info('not exits dir ')
+            logging.info('\n\n\n end \n')
+            
+
         submission = api.create_submission(student_item_dict, student_sub_dict)
         self.create_workflow(submission["uuid"])
         self.submission_uuid = submission["uuid"]
