@@ -180,6 +180,8 @@ class SubmissionMixin(object):
             #logging.info(upload_dir)
             #logging.info("/edx/var/ora2/upload/edxuploads/submissions_attachments/"+upload_dir[0])
             current_dir = self._get_student_item_key().replace("..", "").strip("/ ")
+            current_dir = self._get_student_item_key().replace(":", "\:")
+
             logging.info(current_dir)
             if(os.path.isdir("/edx/var/ora2/upload/edxuploads/"+current_dir)):
                 logging.info('exits dir ')
