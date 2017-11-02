@@ -177,7 +177,7 @@ class SubmissionMixin(object):
             current_dir = self._get_student_item_key().replace("..", "").strip("/ ")
             full_path = '/edx/var/ora2/upload/edxuploads/submissions_attachments/'+current_dir
             if(os.path.isdir(full_path)):
-                if not os.path.isfile(dir_path+'/control'):
+                if not os.path.isfile(full_path+'/control'):
                     student_sub_dict['file_key'] = self._get_student_item_key()
                     with open(full_path+'/control', 'w') as control:
                         control.close()
