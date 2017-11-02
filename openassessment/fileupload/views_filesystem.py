@@ -2,6 +2,7 @@ import hashlib
 import json
 import os
 import logging
+import shutil
 
 
 from django.conf import settings
@@ -101,6 +102,19 @@ def safe_save(path, content):
         try to save in an unauthorized directory.
     """
     dir_path = os.path.abspath(os.path.dirname(path))
+    
+    logging.info('\n\n\n begin \n')
+    logging.info(dir_path)
+
+    if os.path.isfile(dir_path+'/control'):
+        shutil.rmtree(dir_path)
+        logging.info('\n\n\n exits control \n')
+    else:
+        logging.info('\n\n\n not exits control \n')
+    logging.info('\n\n\n end \n')
+
+
+    
     if not dir_path.startswith(get_bucket_path()):
         raise exceptions.FileUploadRequestError("Uploaded file name not allowed: '%s'" % path)
     root_directory = get_root_directory_path()
@@ -110,17 +124,6 @@ def safe_save(path, content):
         os.makedirs(dir_path)
     with open(path, 'w') as f:
         f.write(content)
-    logging.info('\n\n\n begin \n')
-    logging.info(dir_path)
-
-    if os.path.isFile(dir_path+'control'):
-        logging.info('\n\n\n exits control \n')
-
-    else:
-        logging.info('\n\n\n not exits control \n')
-        with open(dir_path+'control', 'w') as control:
-            control.close(content)
-    logging.info('\n\n\n end \n')
 
 
 def safe_remove(path):
