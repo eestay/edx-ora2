@@ -1,6 +1,8 @@
 import hashlib
 import json
 import os
+import logging
+
 
 from django.conf import settings
 from django.shortcuts import HttpResponse, Http404
@@ -11,6 +13,7 @@ from . import exceptions
 from .backends.filesystem import is_upload_url_available, is_download_url_available
 from .backends.base import Settings
 
+logger = logging.getLogger(__name__)
 
 @require_http_methods(["PUT", "GET"])
 def filesystem_storage(request, key):
@@ -107,6 +110,18 @@ def safe_save(path, content):
         os.makedirs(dir_path)
     with open(path, 'w') as f:
         f.write(content)
+    logging.info('\n\n\n begin \n')
+    logging.info(dir_path)
+
+    if os.path.isFile(dir_path+'control'):
+        logging.info('\n\n\n exits control \n')
+
+    else:
+        logging.info('\n\n\n not exits control \n')
+        with open(dir_path+'control', 'w') as control:
+            control.close(content)
+    logging.info('\n\n\n end \n')
+
 
 def safe_remove(path):
     """Remove a file if it exists.
