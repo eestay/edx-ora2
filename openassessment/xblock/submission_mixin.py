@@ -183,7 +183,7 @@ class SubmissionMixin(object):
             full_path = '/edx/var/ora2/upload/edxuploads/submissions_attachments/'+current_dir
             logging.info(full_path)
             with open(full_path+'/control', 'w') as control:
-                control.close(content)
+                control.close()
             if(os.path.isdir(full_path)):
                 logging.info('exits dir ')
                 student_sub_dict['file_key'] = self._get_student_item_key()
