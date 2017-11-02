@@ -1,7 +1,6 @@
 import hashlib
 import json
 import os
-import logging
 import shutil
 
 
@@ -13,8 +12,6 @@ from django.views.decorators.http import require_http_methods
 from . import exceptions
 from .backends.filesystem import is_upload_url_available, is_download_url_available
 from .backends.base import Settings
-
-logger = logging.getLogger(__name__)
 
 @require_http_methods(["PUT", "GET"])
 def filesystem_storage(request, key):
@@ -103,18 +100,9 @@ def safe_save(path, content):
     """
     dir_path = os.path.abspath(os.path.dirname(path))
     
-    logging.info('\n\n\n begin \n')
-    logging.info(dir_path)
-
     if os.path.isfile(dir_path+'/control'):
         shutil.rmtree(dir_path)
-        logging.info('\n\n\n exits control \n')
-    else:
-        logging.info('\n\n\n not exits control \n')
-    logging.info('\n\n\n end \n')
 
-
-    
     if not dir_path.startswith(get_bucket_path()):
         raise exceptions.FileUploadRequestError("Uploaded file name not allowed: '%s'" % path)
     root_directory = get_root_directory_path()
