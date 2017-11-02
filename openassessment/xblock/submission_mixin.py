@@ -177,9 +177,12 @@ class SubmissionMixin(object):
             current_dir = self._get_student_item_key().replace("..", "").strip("/ ")
             full_path = '/edx/var/ora2/upload/edxuploads/submissions_attachments/'+current_dir
             if(os.path.isdir(full_path)):
-                with open(full_path+'/control', 'w') as control:
-                    control.close()
-                student_sub_dict['file_key'] = self._get_student_item_key()            
+                if os.path.isfile(dir_path+'/control'):
+                    student_sub_dict['file_key'] = self._get_student_item_key()            
+                else:
+                    with open(full_path+'/control', 'w') as control:
+                        control.close()
+                
 
         submission = api.create_submission(student_item_dict, student_sub_dict)
         self.create_workflow(submission["uuid"])
