@@ -13,11 +13,19 @@ from . import exceptions
 from .backends.filesystem import is_upload_url_available, is_download_url_available
 from .backends.base import Settings
 
+import logging
+logger = logging.getLogger(__name__)
+
+
 @require_http_methods(["PUT", "GET"])
 def filesystem_storage(request, key):
     """
     Uploading and download files to the local filesystem backend.
     """
+    logger.info("\n\n\n\prueba\n\n\n")
+    logger.info(request)
+    logger.info(key)
+
     if isinstance(key, unicode):
         key = key.encode("utf-8")
     if request.method == "PUT":
